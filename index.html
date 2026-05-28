@@ -1,29 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Transformers en acción</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformers en acción</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #4f46e5);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    nav {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #4f46e5;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    }
+
+    h2 {
+      color: #3730a3;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #eef2ff;
+      padding: 20px;
+      border-radius: 16px;
+      border-left: 5px solid #4f46e5;
+    }
+
+    .highlight {
+      background: #ecfeff;
+      border-left: 5px solid #0891b2;
+      padding: 18px;
+      border-radius: 14px;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #6b7280;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>Transformers en acción</h1>
+<header>
+  <h1>Transformers en acción</h1>
+  <p>Una introducción al procesamiento de lenguaje natural a través de voz, texto e inteligencia artificial.</p>
+</header>
 
-<h2>Una introducción al procesamiento de lenguaje natural</h2>
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#pln">¿Qué es PLN?</a>
+  <a href="#agenda">Agenda</a>
+  <a href="#referencias">Referencias</a>
+</nav>
 
-<p>
-Bienvenidos a esta charla-taller de las Escuelas de Verano de CIMAT.
-</p>
+<section id="inicio">
+  <h2>Bienvenida</h2>
 
-<h3>Contenido</h3>
+  <p>
+    Esta página acompaña la charla-taller <strong>“Transformers en acción: una introducción al procesamiento de lenguaje natural”</strong>,
+    impartida en el marco de las Escuelas de Verano de CIMAT.
+  </p>
 
-<ul>
-    <li>¿Qué es el PLN?</li>
-    <li>¿Qué es un transformer?</li>
-    <li>Reconocimiento automático de voz</li>
-    <li>Clasificación de texto con IA</li>
-    <li>Demostración interactiva</li>
-</ul>
+  <p>
+    El objetivo es explorar, de manera intuitiva y práctica, cómo los métodos modernos de inteligencia artificial pueden procesar lenguaje humano:
+    desde textos escritos hasta señales de voz. A lo largo de la sesión veremos cómo una computadora puede transcribir audio, representar palabras
+    mediante vectores y utilizar modelos neuronales para realizar tareas como clasificación, análisis de sentimiento o reconocimiento automático del habla.
+  </p>
+
+  <div class="highlight">
+    <strong>Idea central:</strong> el lenguaje puede convertirse en datos, y esos datos pueden ser procesados mediante modelos matemáticos y computacionales.
+  </div>
+</section>
+
+<section id="agenda">
+  <h2>Agenda de la charla-taller</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>1. ¿Qué es PLN?</h3>
+      <p>Texto, voz, traducción automática, chatbots, análisis de sentimiento y reconocimiento automático del habla.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. ¿Qué es un transformer?</h3>
+      <p>Tokens, embeddings, atención y contexto: las ideas principales detrás de muchos modelos modernos de IA.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Demo en vivo</h3>
+      <p>Grabaremos audio, lo transcribiremos automáticamente y aplicaremos una clasificación sencilla sobre el texto generado.</p>
+    </div>
+
+    <div class="card">
+      <h3>4. Discusión</h3>
+      <p>Errores, sesgos, ruido, acentos, privacidad y aplicaciones en salud, educación y ciencia de datos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pln">
+  <h2>¿Qué es el procesamiento de lenguaje natural?</h2>
+
+  <p>
+    El <strong>procesamiento de lenguaje natural</strong>, o PLN, es un área de la inteligencia artificial que estudia métodos computacionales
+    para analizar, representar, generar y transformar lenguaje humano. Su objetivo es que las computadoras puedan trabajar con texto y voz
+    de forma útil: traducir, resumir, responder preguntas, clasificar opiniones o transcribir una grabación.
+  </p>
+
+  <p>
+    A diferencia de otros tipos de datos, el lenguaje humano es ambiguo, contextual y variable. Una misma palabra puede tener distintos significados
+    según la frase en la que aparece; una oración puede expresar ironía; y una grabación de voz puede cambiar dependiendo del acento, la velocidad,
+    el ruido del ambiente o las características del hablante.
+  </p>
+
+  <div class="highlight">
+    <strong>Ejemplo:</strong> la frase “¡Qué bonito!” puede ser una expresión positiva, pero también puede ser irónica dependiendo del contexto.
+  </div>
+
+  <h3>Algunas tareas comunes de PLN</h3>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Traducción automática</h3>
+      <p>Convertir texto de un idioma a otro.</p>
+    </div>
+
+    <div class="card">
+      <h3>Análisis de sentimiento</h3>
+      <p>Identificar si un texto expresa una opinión positiva, negativa o neutral.</p>
+    </div>
+
+    <div class="card">
+      <h3>Reconocimiento automático del habla</h3>
+      <p>Convertir una señal de audio en texto escrito.</p>
+    </div>
+
+    <div class="card">
+      <h3>Chatbots</h3>
+      <p>Construir sistemas capaces de responder preguntas o mantener conversaciones.</p>
+    </div>
+  </div>
+
+  <p>
+    En esta charla nos centraremos en una idea muy concreta: tomar una señal de voz, convertirla en texto y después usar un modelo de IA para
+    analizar ese texto. Este flujo permite conectar procesamiento de señales, estadística, aprendizaje automático y lenguaje natural.
+  </p>
+</section>
+
+<section id="referencias">
+  <h2>Referencias</h2>
+
+  <ol>
+    <li>
+      Jurafsky, D. & Martin, J. H. <em>Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models</em>. 3rd ed. draft.
+    </li>
+    <li>
+      Manning, C. D. & Schütze, H. (1999). <em>Foundations of Statistical Natural Language Processing</em>. MIT Press.
+    </li>
+    <li>
+      Vaswani, A. et al. (2017). <em>Attention Is All You Need</em>. Advances in Neural Information Processing Systems.
+    </li>
+  </ol>
+</section>
+
+<footer>
+  <p>Escuelas de Verano CIMAT · Transformers en acción</p>
+</footer>
 
 </body>
 </html>
