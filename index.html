@@ -472,7 +472,7 @@ componentes fundamentales de los transformers.
 </p> 
 
 
-  <h3>3. Atención: enfocarse en lo importante</h3>
+  <h3>3. Atención: el poder del contexto</h3>
 
 <p>
 Una vez que cada palabra ha sido convertida en un embedding, el modelo debe determinar qué partes de la oración
@@ -481,9 +481,9 @@ son más importantes para comprender su significado. Esta idea se conoce como <s
 </p>
 
 <p>
-La atención permite que el modelo asigne diferentes niveles de importancia a las palabras de una oración.
-De esta manera, cuando intenta interpretar una palabra determinada, puede enfocarse en aquellas que aportan
-más información relevante para comprender su significado.
+La atención permite que el modelo asigne distintos niveles de importancia a las palabras de una oración.
+De esta manera, cuando intenta interpretar una palabra determinada, puede utilizar información proveniente
+de otras palabras relevantes dentro del contexto.
 </p>
 
 <div class="highlight">
@@ -491,52 +491,92 @@ más información relevante para comprender su significado.
 Los transformers intentan hacer algo similar.
 </div>
 
-  <div class="figure-container">
+<h4>Ejemplo: una misma palabra, dos significados</h4>
+
+<p>
+Consideremos las siguientes oraciones:
+</p>
+
+<div class="example-box">
+    <p class="sentence">
+        "El banco estaba lleno de gente."
+    </p>
+
+    <p class="sentence">
+        "Me senté en el banco del parque."
+    </p>
+</div>
+
+<p>
+La palabra <strong>banco</strong> aparece en ambas oraciones, pero su significado es diferente:
+</p>
+
+<ul>
+    <li>En la primera oración, <strong>banco</strong> se refiere a una institución financiera.</li>
+    <li>En la segunda oración, <strong>banco</strong> se refiere a un asiento.</li>
+</ul>
+
+<p>
+¿Cómo puede distinguirlo un transformer?
+</p>
+
+<p>
+La respuesta es que el modelo no analiza la palabra <strong>banco</strong> de manera aislada.
+En cambio, presta atención a las palabras que la rodean para construir una representación contextualizada.
+</p>
+
+<h4>Oración 1: "El banco estaba lleno de gente."</h4>
+
+<p>
+Para interpretar correctamente la palabra <strong>banco</strong>, el modelo puede prestar mayor atención a palabras como:
+</p>
+
+<ul>
+    <li><strong>lleno</strong></li>
+    <li><strong>gente</strong></li>
+</ul>
+
+<p>
+Estas palabras sugieren que estamos hablando de un lugar donde se reúnen personas, lo que resulta consistente
+con el significado de una institución financiera.
+</p>
+
+<h4>Oración 2: "Me senté en el banco del parque."</h4>
+
+<p>
+En este caso, las palabras más informativas son:
+</p>
+
+<ul>
+    <li><strong>senté</strong></li>
+    <li><strong>parque</strong></li>
+</ul>
+
+<p>
+Ambas palabras sugieren un objeto físico sobre el que una persona puede sentarse, por lo que el modelo
+interpreta <strong>banco</strong> como un asiento.
+</p>
+
+<div class="figure-container">
     <img src="assets/images/attention.png"
          alt="Ejemplo del mecanismo de atención"
          class="embedding-figure">
 
     <p class="figure-caption">
-        Ejemplo ilustrativo del mecanismo de atención. Al interpretar la palabra "sofá",
-        el modelo asigna distintos niveles de importancia a las demás palabras de la oración.
-    </p>
-</div>
-
-  <h4>Ejemplo: ¿cómo interpretar la palabra "sofá"?</h4>
-
-<p>
-Consideremos la oración:
-</p>
-
-<div class="example-box">
-    <p class="sentence">
-        "El gato se sentó en el sofá."
+        Representación simplificada del mecanismo de atención. El modelo asigna diferentes niveles de importancia
+        a las palabras del contexto para interpretar una palabra objetivo.
     </p>
 </div>
 
 <p>
-Para comprender correctamente la palabra <strong>"sofá"</strong>, el modelo analiza todas las palabras
-de la oración. Sin embargo, algunas aportan más información que otras.
+Lo importante no es qué palabra recibe exactamente el mayor peso, sino la idea de que el modelo puede combinar
+información proveniente de múltiples palabras para construir una representación más rica y dependiente del contexto.
 </p>
 
-<ul>
-    <li><strong>gato</strong> y <strong>sentó</strong> proporcionan pistas importantes sobre una acción y un objeto físico.</li>
-    <li><strong>en</strong> indica una relación espacial.</li>
-    <li><strong>el</strong> aporta poca información semántica.</li>
-</ul>
-
-<p>
-El mecanismo de atención permite que el modelo asigne automáticamente diferentes pesos a estas palabras.
-En consecuencia, el significado de <strong>"sofá"</strong> se construye utilizando principalmente aquellas
-palabras que resultan más informativas dentro del contexto.
-</p>
-
-  <div class="highlight">
-<strong>¿Por qué es importante?</strong>
-La atención permite capturar relaciones entre palabras incluso cuando se encuentran alejadas dentro de una oración.
-Esta idea es el componente central de los transformers modernos.
+<div class="highlight">
+<strong>Idea clave:</strong> los embeddings representan el significado general de una palabra, mientras que la atención
+permite adaptar ese significado al contexto específico de una oración.
 </div>
-
   
 </section>
   
