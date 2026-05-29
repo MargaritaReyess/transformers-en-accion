@@ -98,7 +98,42 @@
       border-radius: 15px;
     }
 
-  
+  .example-box {
+  background: #f8fafc;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 25px;
+  margin: 25px 0;
+  text-align: center;
+}
+
+.sentence {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: #4f46e5;
+  margin: 10px 0;
+}
+
+.tokens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tokens span {
+  background: #eef2ff;
+  border: 2px solid #818cf8;
+  color: #312e81;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+}
     
   </style>
 </head>
@@ -264,6 +299,51 @@
       <p>Ayuda a distinguir significados dependiendo de las palabras que rodean a cada término.</p>
     </div>
   </div>
+
+
+  <section id="transformer">
+  <h2>¿Qué es un transformer?</h2>
+
+  <p>
+    Un <strong>transformer</strong> es una arquitectura de red neuronal diseñada para procesar secuencias, como palabras en una oración,
+    fragmentos de texto o segmentos de audio. Su idea central es el mecanismo de <strong>atención</strong>, que permite al modelo identificar
+    qué partes de la entrada son más relevantes para interpretar el contexto.
+  </p>
+
+  <p>
+    Por ejemplo, en la frase <em>“El banco estaba lleno de gente”</em>, la palabra “banco” probablemente se refiere a una institución financiera.
+    En cambio, en <em>“Me senté en el banco del parque”</em>, la misma palabra tiene otro significado. Un modelo de lenguaje debe usar el contexto
+    para distinguir estos casos.
+  </p>
+
+  <div class="highlight">
+    <strong>Idea clave:</strong> los transformers no procesan las palabras de forma aislada; aprenden relaciones entre palabras dentro de un contexto.
+  </div>
+
+  <h3>Conceptos importantes</h3>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Tokens</h3>
+      <p>Son las unidades en las que se divide el texto: palabras, partes de palabras o signos.</p>
+    </div>
+
+    <div class="card">
+      <h3>Embeddings</h3>
+      <p>Son representaciones numéricas de los tokens. Permiten convertir lenguaje en vectores.</p>
+    </div>
+
+    <div class="card">
+      <h3>Atención</h3>
+      <p>Permite que el modelo determine qué partes del texto son más relevantes para interpretar cada palabra.</p>
+    </div>
+
+    <div class="card">
+      <h3>Contexto</h3>
+      <p>Ayuda a distinguir significados dependiendo de las palabras que rodean a cada término.</p>
+    </div>
+  </div>
+</section>
 </section>
   
 <section id="referencias">
