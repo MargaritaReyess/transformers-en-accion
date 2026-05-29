@@ -174,6 +174,13 @@
     box-shadow:0 4px 12px rgba(0,0,0,0.12);
 }
 
+    .attention-figure{
+    max-width:800px;
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+}
+
 .figure-caption{
     margin-top:10px;
     font-size:0.95rem;
@@ -493,74 +500,10 @@ Los transformers intentan hacer algo similar.
 
 <h4>Ejemplo: una misma palabra, dos significados</h4>
 
-<p>
-Consideremos las siguientes oraciones:
-</p>
-
-<div class="example-box">
-    <p class="sentence">
-        "El banco estaba lleno de gente."
-    </p>
-
-    <p class="sentence">
-        "Me senté en el banco del parque."
-    </p>
-</div>
-
-<p>
-La palabra <strong>banco</strong> aparece en ambas oraciones, pero su significado es diferente:
-</p>
-
-<ul>
-    <li>En la primera oración, <strong>banco</strong> se refiere a una institución financiera.</li>
-    <li>En la segunda oración, <strong>banco</strong> se refiere a un asiento.</li>
-</ul>
-
-<p>
-¿Cómo puede distinguirlo un transformer?
-</p>
-
-<p>
-La respuesta es que el modelo no analiza la palabra <strong>banco</strong> de manera aislada.
-En cambio, presta atención a las palabras que la rodean para construir una representación contextualizada.
-</p>
-
-<h4>Oración 1: "El banco estaba lleno de gente."</h4>
-
-<p>
-Para interpretar correctamente la palabra <strong>banco</strong>, el modelo puede prestar mayor atención a palabras como:
-</p>
-
-<ul>
-    <li><strong>lleno</strong></li>
-    <li><strong>gente</strong></li>
-</ul>
-
-<p>
-Estas palabras sugieren que estamos hablando de un lugar donde se reúnen personas, lo que resulta consistente
-con el significado de una institución financiera.
-</p>
-
-<h4>Oración 2: "Me senté en el banco del parque."</h4>
-
-<p>
-En este caso, las palabras más informativas son:
-</p>
-
-<ul>
-    <li><strong>senté</strong></li>
-    <li><strong>parque</strong></li>
-</ul>
-
-<p>
-Ambas palabras sugieren un objeto físico sobre el que una persona puede sentarse, por lo que el modelo
-interpreta <strong>banco</strong> como un asiento.
-</p>
-
 <div class="figure-container">
     <img src="assets/images/attention.png"
          alt="Ejemplo del mecanismo de atención"
-         class="embedding-figure">
+         class="attention-figure">
 
     <p class="figure-caption">
         Representación simplificada del mecanismo de atención. El modelo asigna diferentes niveles de importancia
