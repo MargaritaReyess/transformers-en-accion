@@ -202,9 +202,10 @@
 
 <nav>
   <a href="#inicio">Inicio</a>
+  <a href="#agenda">Agenda</a>
   <a href="#pln">¿Qué es PLN?</a>
   <a href="#transformer">Transformers</a>
-  <a href="#agenda">Agenda</a>
+  
   <a href="#referencias">Referencias</a>
 </nav>
 
@@ -469,6 +470,74 @@ no basta con conocer el significado individual de cada palabra. El modelo tambi�
 importantes para interpretar el contexto. Esta idea conduce al mecanismo de <strong>atención</strong>, uno de los
 componentes fundamentales de los transformers.
 </p> 
+
+
+  <h3>3. Atención: enfocarse en lo importante</h3>
+
+<p>
+Una vez que cada palabra ha sido convertida en un embedding, el modelo debe determinar qué partes de la oración
+son más importantes para comprender su significado. Esta idea se conoce como <strong>mecanismo de atención</strong>
+(<em>attention mechanism</em>).
+</p>
+
+<p>
+La atención permite que el modelo asigne diferentes niveles de importancia a las palabras de una oración.
+De esta manera, cuando intenta interpretar una palabra determinada, puede enfocarse en aquellas que aportan
+más información relevante para comprender su significado.
+</p>
+
+<div class="highlight">
+<strong>Idea intuitiva:</strong> cuando las personas leen una oración, no prestan la misma atención a todas las palabras.
+Los transformers intentan hacer algo similar.
+</div>
+
+  <div class="figure-container">
+    <img src="assets/images/attention.png"
+         alt="Ejemplo del mecanismo de atención"
+         class="embedding-figure">
+
+    <p class="figure-caption">
+        Ejemplo ilustrativo del mecanismo de atención. Al interpretar la palabra "sofá",
+        el modelo asigna distintos niveles de importancia a las demás palabras de la oración.
+    </p>
+</div>
+
+  <h4>Ejemplo: ¿cómo interpretar la palabra "sofá"?</h4>
+
+<p>
+Consideremos la oración:
+</p>
+
+<div class="example-box">
+    <p class="sentence">
+        "El gato se sentó en el sofá."
+    </p>
+</div>
+
+<p>
+Para comprender correctamente la palabra <strong>"sofá"</strong>, el modelo analiza todas las palabras
+de la oración. Sin embargo, algunas aportan más información que otras.
+</p>
+
+<ul>
+    <li><strong>gato</strong> y <strong>sentó</strong> proporcionan pistas importantes sobre una acción y un objeto físico.</li>
+    <li><strong>en</strong> indica una relación espacial.</li>
+    <li><strong>el</strong> aporta poca información semántica.</li>
+</ul>
+
+<p>
+El mecanismo de atención permite que el modelo asigne automáticamente diferentes pesos a estas palabras.
+En consecuencia, el significado de <strong>"sofá"</strong> se construye utilizando principalmente aquellas
+palabras que resultan más informativas dentro del contexto.
+</p>
+
+  <div class="highlight">
+<strong>¿Por qué es importante?</strong>
+La atención permite capturar relaciones entre palabras incluso cuando se encuentran alejadas dentro de una oración.
+Esta idea es el componente central de los transformers modernos.
+</div>
+
+  
 </section>
   
 <section id="referencias">
