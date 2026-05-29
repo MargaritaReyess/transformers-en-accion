@@ -373,12 +373,11 @@ en una representación numérica llamada <strong>embedding</strong>.
 
 <p>
 Un embedding es simplemente un vector de números asociado a cada token. Estos vectores son aprendidos por el modelo
-durante el entrenamiento y tienen una propiedad muy importante: palabras con significados similares suelen tener
-representaciones cercanas entre sí.
+durante el entrenamiento y permiten representar el significado de las palabras de manera matemática.
 </p>
 
 <p>
-Por ejemplo, podríamos representar algunas palabras mediante vectores de tres dimensiones:
+Para ilustrar la idea, supongamos que cada palabra se representa mediante un vector de únicamente dos dimensiones:
 </p>
 
 <div class="embedding-box">
@@ -386,22 +385,22 @@ Por ejemplo, podríamos representar algunas palabras mediante vectores de tres d
 <table class="embedding-table">
 <tr>
     <th>Token</th>
-    <th>Embedding</th>
+    <th>Embedding (2D)</th>
 </tr>
 
 <tr>
     <td>gato</td>
-    <td>[0.82, 0.15, -0.33]</td>
+    <td>(0.80 , 0.60)</td>
 </tr>
 
 <tr>
     <td>perro</td>
-    <td>[0.79, 0.18, -0.29]</td>
+    <td>(0.75 , 0.45)</td>
 </tr>
 
 <tr>
     <td>automóvil</td>
-    <td>[-0.41, 0.90, 0.12]</td>
+    <td>(-0.60 , -0.50)</td>
 </tr>
 
 </table>
@@ -409,14 +408,13 @@ Por ejemplo, podríamos representar algunas palabras mediante vectores de tres d
 </div>
 
 <p>
-Los valores mostrados son únicamente ilustrativos. En modelos modernos como BERT o GPT, los embeddings suelen tener
-cientos o incluso miles de dimensiones.
+Cada palabra puede interpretarse como un punto dentro de un plano. En modelos reales los embeddings suelen tener cientos
+de dimensiones, pero esta versión simplificada permite visualizar la idea.
 </p>
 
 <div class="highlight">
-<strong>Idea intuitiva:</strong> un embedding funciona como una coordenada en un espacio geométrico. Palabras con significados parecidos suelen ubicarse cerca unas de otras.
+<strong>Idea intuitiva:</strong> palabras con significados similares suelen ubicarse cerca unas de otras en el espacio de embeddings.
 </div>
-  
 </section>
   
 <section id="referencias">
