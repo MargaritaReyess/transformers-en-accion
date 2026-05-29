@@ -162,7 +162,24 @@
     background:#f9fafb;
 }
 
-    
+    .figure-container{
+    text-align:center;
+    margin:30px 0;
+}
+
+.embedding-figure{
+    max-width:700px;
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+}
+
+.figure-caption{
+    margin-top:10px;
+    font-size:0.95rem;
+    color:#6b7280;
+    font-style:italic;
+}
   </style>
 </head>
 
@@ -387,22 +404,30 @@ Para ilustrar la idea, supongamos que cada palabra se representa mediante un vec
     <th>Token</th>
     <th>Embedding (2D)</th>
 </tr>
-
 <tr>
     <td>gato</td>
-    <td>(0.80 , 0.60)</td>
+    <td>(0.85 , 0.40)</td>
 </tr>
-
 <tr>
     <td>perro</td>
-    <td>(0.75 , 0.45)</td>
+    <td>(0.78 , 0.35)</td>
 </tr>
-
+  <tr>
+    <td>león</td>
+    <td>(0.80 , 0.55)</td>
+</tr>
 <tr>
     <td>automóvil</td>
-    <td>(-0.60 , -0.50)</td>
+    <td>(-0.40 , -0.30)</td>
 </tr>
-
+  <tr>
+    <td>camión</td>
+    <td>(-0.45 , -0.35)</td>
+</tr>
+  <tr>
+    <td>bicicleta</td>
+    <td>(-0.60 , -0.10)</td>
+</tr>
 </table>
 
 </div>
@@ -415,6 +440,35 @@ de dimensiones, pero esta versión simplificada permite visualizar la idea.
 <div class="highlight">
 <strong>Idea intuitiva:</strong> palabras con significados similares suelen ubicarse cerca unas de otras en el espacio de embeddings.
 </div>
+
+  <div class="figure-container">
+    <img src="assets/images/embedding.png"
+         alt="Visualización de embeddings"
+         class="embedding-figure">
+
+    <p class="figure-caption">
+        Figura. Ejemplo ilustrativo de un espacio de embeddings en dos dimensiones.
+        Las palabras con significados relacionados suelen ubicarse cerca unas de otras.
+    </p>
+</div>
+  
+<p>
+Observa que las palabras <em>gato</em> y <em>perro</em> aparecen relativamente cerca entre sí porque ambas representan animales.
+Por otro lado, la palabra <em>automóvil</em> aparece más alejada debido a que pertenece a una categoría semántica diferente.
+</p>
+
+<p>
+Aunque el modelo sólo ve números, aprende automáticamente representaciones que organizan las palabras según sus relaciones
+y significados. Esta capacidad resulta fundamental para tareas como traducción automática, clasificación de textos o
+reconocimiento automático del habla.
+</p>
+
+ <p>
+Los embeddings permiten representar palabras mediante números. Sin embargo, para comprender una oración completa
+no basta con conocer el significado individual de cada palabra. El modelo también debe determinar cuáles son más
+importantes para interpretar el contexto. Esta idea conduce al mecanismo de <strong>atención</strong>, uno de los
+componentes fundamentales de los transformers.
+</p> 
 </section>
   
 <section id="referencias">
