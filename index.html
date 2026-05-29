@@ -212,7 +212,7 @@
   <a href="#agenda">Agenda</a>
   <a href="#pln">¿Qué es PLN?</a>
   <a href="#transformer">Transformers</a>
-  
+<a href="#funcionamiento-transformer">Funcionamiento</a>
   <a href="#referencias">Referencias</a>
 </nav>
 
@@ -528,6 +528,128 @@ como BERT, GPT y Whisper.
 </p>
   
 </section>
+
+<section id="funcionamiento-transformer">
+  <h2>¿Cómo funciona un transformer?</h2>
+
+  <p>
+    Hasta ahora hemos introducido tres ideas fundamentales: los <strong>tokens</strong>,
+    los <strong>embeddings</strong> y el mecanismo de <strong>atención</strong>.
+    Estas piezas permiten construir los modelos conocidos como <strong>transformers</strong>,
+    una de las arquitecturas más importantes en la inteligencia artificial moderna.
+  </p>
+
+  <p>
+    De manera simplificada, un transformer recibe una secuencia de palabras o tokens como entrada.
+    Cada token se convierte en un embedding, es decir, en una representación numérica.
+    Después, mediante el mecanismo de atención, el modelo analiza las relaciones entre los tokens
+    y construye una representación dependiente del contexto.
+  </p>
+
+  <p>
+    Esto significa que el modelo no sólo representa palabras de manera individual, sino que también
+    incorpora información sobre cómo se relacionan entre sí dentro de una oración.
+  </p>
+
+  <div class="highlight">
+    <strong>Idea clave:</strong> un transformer transforma una secuencia de tokens en representaciones
+    numéricas contextualizadas que pueden usarse para resolver distintas tareas de lenguaje.
+  </div>
+
+  <h3>¿Para qué se usan estas representaciones?</h3>
+
+  <p>
+    Una vez que el transformer ha construido una representación contextualizada del texto, esa información
+    puede utilizarse para muchas tareas diferentes.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Clasificación de textos</h3>
+      <p>Identificar si un comentario es positivo, negativo o neutral.</p>
+    </div>
+
+    <div class="card">
+      <h3>Traducción automática</h3>
+      <p>Convertir texto de un idioma a otro.</p>
+    </div>
+
+    <div class="card">
+      <h3>Respuesta a preguntas</h3>
+      <p>Localizar información relevante y producir una respuesta.</p>
+    </div>
+
+    <div class="card">
+      <h3>Generación de texto</h3>
+      <p>Producir texto nuevo a partir de una instrucción o contexto.</p>
+    </div>
+
+    <div class="card">
+      <h3>Resumen automático</h3>
+      <p>Reducir un texto largo a sus ideas principales.</p>
+    </div>
+
+    <div class="card">
+      <h3>Reconocimiento de voz</h3>
+      <p>Convertir una señal de audio en texto escrito.</p>
+    </div>
+  </div>
+
+  <h3>Algunos transformers famosos</h3>
+
+  <p>
+    Actualmente existen muchos modelos basados en transformers. Aunque pueden estar diseñados para tareas
+    distintas, comparten la idea de representar información mediante vectores y usar atención para aprovechar
+    el contexto.
+  </p>
+
+  <div class="embedding-box">
+    <table class="embedding-table">
+      <tr>
+        <th>Modelo</th>
+        <th>Aplicación principal</th>
+      </tr>
+
+      <tr>
+        <td>BERT</td>
+        <td>Comprensión y análisis de texto</td>
+      </tr>
+
+      <tr>
+        <td>GPT</td>
+        <td>Generación de texto y conversación</td>
+      </tr>
+
+      <tr>
+        <td>Whisper</td>
+        <td>Reconocimiento automático del habla</td>
+      </tr>
+
+      <tr>
+        <td>Llama</td>
+        <td>Modelos abiertos para investigación y desarrollo</td>
+      </tr>
+
+      <tr>
+        <td>Gemini</td>
+        <td>Asistentes conversacionales y procesamiento multimodal</td>
+      </tr>
+    </table>
+  </div>
+
+  <h3>De la teoría a la práctica</h3>
+
+  <p>
+    En esta charla-taller usaremos estas ideas en una demostración sencilla: grabaremos una frase,
+    la convertiremos automáticamente en texto y después aplicaremos un modelo de clasificación.
+  </p>
+
+  <p>
+    Así veremos cómo los conceptos de tokens, embeddings, atención y contexto aparecen en una aplicación real
+    de procesamiento de lenguaje natural.
+  </p>
+</section>
+
   
 <section id="referencias">
   <h2>Referencias</h2>
