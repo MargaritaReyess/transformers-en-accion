@@ -134,6 +134,34 @@
   border-radius: 12px;
   font-weight: bold;
 }
+
+    .embedding-box{
+    margin:25px 0;
+    display:flex;
+    justify-content:center;
+}
+
+.embedding-table{
+    border-collapse:collapse;
+    min-width:450px;
+}
+
+.embedding-table th{
+    background:#4f46e5;
+    color:white;
+    padding:12px;
+}
+
+.embedding-table td{
+    border:1px solid #d1d5db;
+    padding:12px;
+    text-align:center;
+}
+
+.embedding-table tr:nth-child(even){
+    background:#f9fafb;
+}
+
     
   </style>
 </head>
@@ -334,6 +362,59 @@ exactamente igual durante el entrenamiento.
 
 <div class="highlight">
   <strong>Idea intuitiva:</strong> los tokens son las “piezas” con las que el modelo empieza a construir una representación matemática del lenguaje.
+</div>
+
+<h3>2. Embeddings: convertir palabras en números</h3>
+
+<p>
+Las computadoras no entienden palabras directamente. Para poder procesarlas, cada token debe transformarse
+en una representación numérica llamada <strong>embedding</strong>.
+</p>
+
+<p>
+Un embedding es simplemente un vector de números asociado a cada token. Estos vectores son aprendidos por el modelo
+durante el entrenamiento y tienen una propiedad muy importante: palabras con significados similares suelen tener
+representaciones cercanas entre sí.
+</p>
+
+<p>
+Por ejemplo, podríamos representar algunas palabras mediante vectores de tres dimensiones:
+</p>
+
+<div class="embedding-box">
+
+<table class="embedding-table">
+<tr>
+    <th>Token</th>
+    <th>Embedding</th>
+</tr>
+
+<tr>
+    <td>gato</td>
+    <td>[0.82, 0.15, -0.33]</td>
+</tr>
+
+<tr>
+    <td>perro</td>
+    <td>[0.79, 0.18, -0.29]</td>
+</tr>
+
+<tr>
+    <td>automóvil</td>
+    <td>[-0.41, 0.90, 0.12]</td>
+</tr>
+
+</table>
+
+</div>
+
+<p>
+Los valores mostrados son únicamente ilustrativos. En modelos modernos como BERT o GPT, los embeddings suelen tener
+cientos o incluso miles de dimensiones.
+</p>
+
+<div class="highlight">
+<strong>Idea intuitiva:</strong> un embedding funciona como una coordenada en un espacio geométrico. Palabras con significados parecidos suelen ubicarse cerca unas de otras.
 </div>
   
 </section>
