@@ -187,6 +187,22 @@
     color:#6b7280;
     font-style:italic;
 }
+
+.demo-button {
+  display: inline-block;
+  background: #4f46e5;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.demo-button:hover {
+  background: #3730a3;
+}
+    
   </style>
 </head>
 
@@ -213,6 +229,7 @@
   <a href="#pln">¿Qué es PLN?</a>
   <a href="#transformer">Transformers</a>
 <a href="#funcionamiento-transformer">Funcionamiento</a>
+  <a href="#demo">Demo</a>
   <a href="#referencias">Referencias</a>
 </nav>
 
@@ -657,7 +674,80 @@ como BERT, GPT y Whisper.
     de procesamiento de lenguaje natural.
   </p>
 </section>
+<section id="demo">
+  <h2>De la voz al significado: demostración en vivo</h2>
 
+  <p>
+    En esta demostración veremos cómo una frase hablada puede convertirse en texto y después ser analizada
+    automáticamente por un modelo de inteligencia artificial.
+  </p>
+
+  <p>
+    El objetivo es observar un flujo completo de procesamiento de lenguaje natural:
+  </p>
+
+  <div class="highlight">
+    <strong>Audio → Transcripción → Clasificación de sentimiento</strong>
+  </div>
+
+  <h3>Paso 1. Grabamos una frase</h3>
+
+  <p>
+    Una persona dirá una frase breve frente al micrófono. Por ejemplo:
+  </p>
+
+  <div class="example-box">
+    <p class="sentence">"Hoy estoy muy feliz porque aprobé el examen."</p>
+  </div>
+
+  <h3>Paso 2. Transcripción automática</h3>
+
+  <p>
+    El audio será procesado por un modelo de reconocimiento automático del habla. Este modelo convierte
+    la señal de voz en texto escrito.
+  </p>
+
+  <div class="example-box">
+    <p><strong>Audio grabado</strong></p>
+    <div class="arrow">↓</div>
+    <p class="sentence">Hoy estoy muy feliz porque aprobé el examen.</p>
+  </div>
+
+  <h3>Paso 3. Clasificación de sentimiento</h3>
+
+  <p>
+    Una vez obtenida la transcripción, el texto se envía a un modelo de clasificación. El modelo analiza
+    la frase y estima si el sentimiento expresado es positivo, negativo o neutral.
+  </p>
+
+  <div class="example-box">
+    <p class="sentence">Hoy estoy muy feliz porque aprobé el examen.</p>
+    <div class="arrow">↓</div>
+    <p><strong>Resultado:</strong> sentimiento positivo</p>
+  </div>
+
+  <p>
+    En esta etapa aparecen nuevamente las ideas que ya estudiamos: el texto se divide en tokens, los tokens
+    se convierten en embeddings, el mecanismo de atención identifica relaciones importantes y el modelo produce
+    una predicción.
+  </p>
+
+  <div class="highlight">
+    <strong>Pregunta para discutir:</strong> ¿qué palabras de la frase crees que fueron más importantes para que
+    el modelo detectara el sentimiento?
+  </div>
+
+  <h3>Demo interactiva</h3>
+
+  <p>
+    Aquí colocaremos la aplicación interactiva para grabar audio, transcribirlo y clasificar el sentimiento
+    de la frase.
+  </p>
+
+  <p>
+    <a href="#" class="demo-button">Próximamente: abrir demo interactiva</a>
+  </p>
+</section>
   
 <section id="referencias">
   <h2>Referencias</h2>
