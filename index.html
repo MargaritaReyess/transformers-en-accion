@@ -237,7 +237,7 @@
 
   <p>
     Esta página acompaña la charla-taller <strong>“Transformers en acción: una introducción al procesamiento de lenguaje natural”</strong>,
-    impartida en el marco de las Escuelas de Verano de CIMAT, Unidad Monterrey.
+    impartida en el marco de las Escuelas de Verano de CIMAT 2026, Unidad Monterrey.
   </p>
 
   <p>
@@ -664,20 +664,17 @@ como BERT, GPT y Whisper.
   
 </section>
   
-<section id="demo">
+
+    <section id="demo">
   <h2>De la voz al significado: demostración en vivo</h2>
 
   <p>
     En esta demostración veremos cómo una frase hablada puede convertirse en texto y después ser analizada
-    automáticamente por un modelo de inteligencia artificial.
-  </p>
-
-  <p>
-    El objetivo es observar un flujo completo de procesamiento de lenguaje natural:
+    automáticamente mediante herramientas de procesamiento de lenguaje natural y análisis acústico.
   </p>
 
   <div class="highlight">
-    <strong>Audio → Transcripción → Clasificación de sentimiento</strong>
+    <strong>Audio → Transcripción → Sentimiento → Análisis acústico de la voz</strong>
   </div>
 
   <h3>Paso 1. Grabamos una frase</h3>
@@ -716,25 +713,40 @@ como BERT, GPT y Whisper.
     <p><strong>Resultado:</strong> sentimiento positivo</p>
   </div>
 
+  <h3>Paso 4. Análisis acústico de la voz</h3>
+
   <p>
-    En esta etapa aparecen nuevamente las ideas que ya estudiamos: el texto se divide en tokens, los tokens
-    se convierten en embeddings, el mecanismo de atención identifica relaciones importantes y el modelo produce
-    una predicción.
+    Además del contenido textual, la señal de voz contiene información acústica. En esta demo estimaremos
+    la <strong>frecuencia fundamental</strong>, también conocida como <strong>F0</strong>, que está relacionada
+    con la altura tonal de la voz.
   </p>
 
+  <p>
+    Como ejercicio ilustrativo, usaremos el valor promedio de F0 para hacer una estimación simple de voz
+    masculina o femenina. Esta estimación no debe interpretarse como una identificación definitiva de la persona,
+    sino como un ejemplo de cómo una característica acústica puede utilizarse para describir una señal de voz.
+  </p>
+
+  <div class="example-box">
+    <p><strong>Resultado acústico:</strong></p>
+    <p>F0 promedio: 210.5 Hz</p>
+    <p>Estimación simple: voz femenina</p>
+  </div>
+
   <div class="highlight">
-    <strong>Pregunta para discutir:</strong> ¿qué palabras de la frase crees que fueron más importantes para que
-    el modelo detectara el sentimiento?
+    <strong>Importante:</strong> esta estimación puede equivocarse. La voz humana es variable y depende de muchos factores:
+    edad, tono, estilo de habla, calidad del micrófono, ruido ambiental y diferencias individuales.
   </div>
 
   <h3>Demo interactiva</h3>
 
   <p>
-La siguiente aplicación permite grabar una frase, obtener su transcripción automática y clasificar
-el sentimiento expresado en el texto.
+    La siguiente aplicación permite grabar una frase, obtener su transcripción automática, clasificar el sentimiento
+    expresado en el texto y calcular una estimación acústica sencilla basada en F0.
   </p>
 
-  <p>
+  
+      <p>
     <a href="https://huggingface.co/spaces/MReyess/voz-sentimiento-transformers"
       
    class="demo-button"
